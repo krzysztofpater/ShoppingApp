@@ -1,0 +1,125 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  height: 100vh;
+  background: linear-gradient(to top left, #135c45, #7cc770);
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  max-width: 500px;
+  margin: 50px auto;
+  text-align: center;
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3));
+  border-radius: 8px;
+}
+
+.header {
+  padding: 20px 10px;
+}
+
+h1 {
+  padding: 20px;
+}
+
+.add {
+  display: flex;
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.add__input {
+  width: 450px;
+  margin: 10px;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+}
+.add__btn {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid red;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.add__btn--icon {
+  width: 50px;
+  height: 50px;
+  border: none;
+  outline: none;
+  font-size: 2.5rem;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.add__btn--icon:hover {
+  color: tomato;
+}
+.add__btn--icon:active {
+  transform: scale(110%);
+}
+
+.list__item {
+  display: flex;
+  justify-content: space-between;
+}
+.list__item--name {
+  padding: 20px 30px;
+  font-size: 1.2rem;
+}
+
+.btn__delete {
+  padding: 15px;
+  margin: 10px 20px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn__delete:hover {
+  color: tomato;
+}
+.btn__delete:active {
+  transform: scale(108%);
+}
+
+.fa-trash-can {
+  font-size: 1.3rem;
+  height: 20px;
+  width: 20px;
+}
+
+.line {
+  width: 95%;
+  height: 2px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.btn__send {
+  padding: 20px 80px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin: 30px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn__send:hover {
+  color: tomato;
+}
+.btn__send:active {
+  transform: scale(102%);
+}/*# sourceMappingURL=main.css.map */
