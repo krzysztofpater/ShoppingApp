@@ -14,7 +14,7 @@ if (localStorage.getItem("list")) {
 }
 
 plus.addEventListener("click", (e) => {
-	// e.preventDefalult();
+	e.preventDefault();
 
 	const inputValue = mainInput.value;
 
