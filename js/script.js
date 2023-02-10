@@ -26,7 +26,7 @@ plus.addEventListener("click", (e) => {
 		return;
 	}
 
-	//create an object with a single product. Iniqueness of ID id provided through the time stamp
+	//create an object with a single product. Iniqueness of ID is provided through the time stamp
 	const task = {
 		id: new Date().getTime(),
 		name: inputValue,
