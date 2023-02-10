@@ -74,9 +74,21 @@ function removeTask(taskId) {
 	localStorage.setItem("list", JSON.stringify(list));
 }
 
+//day of the week from the < POST na adres ‘/grocery/<day> > - I'm not exactly sure what <day> element should be...
+const dayArr = [
+	"sunday",
+	"monday",
+	"tuesday",
+	"wednsday",
+	"thursday",
+	"friday",
+	"saturday",
+];
+const day = dayArr[new Date().getDay()];
+
 //sending list array using POST method
 send.addEventListener("click", () => {
-	fetch(`/grocery/<day>`, {
+	fetch(`/grocery/${day}`, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
