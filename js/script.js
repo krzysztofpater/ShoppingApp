@@ -122,10 +122,12 @@ send.addEventListener("click", () => {
 const openModal = () => {
 	modal.classList.remove("hidden");
 	overlay.classList.remove("hidden");
+	document.body.classList.add("sticky-body");
 };
 const closeModal = () => {
 	modal.classList.add("hidden");
 	overlay.classList.add("hidden");
+	document.body.classList.remove("sticky-body");
 };
 
 document.addEventListener("click", closeModal);

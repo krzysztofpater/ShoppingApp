@@ -8,7 +8,8 @@
 
 body {
   font-family: "Lato", sans-serif;
-  height: 100vh;
+  position: relative;
+  height: 100%;
   background: linear-gradient(to top left, #135c45, #7cc770);
   background-attachment: fixed;
   display: flex;
@@ -158,4 +159,8 @@ h2 {
 
 .hidden {
   display: none;
+}
+
+.sticky-body {
+  overflow: hidden;
 }/*# sourceMappingURL=main.css.map */
