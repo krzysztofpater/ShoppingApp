@@ -122,12 +122,12 @@ send.addEventListener("click", () => {
 const openModal = () => {
 	modal.classList.remove("hidden");
 	overlay.classList.remove("hidden");
-	document.body.classList.add("sticky-body");
+	// document.body.classList.add("sticky-body"); //switching this off, cause some visual disorientation with very long lists
 };
 const closeModal = () => {
 	modal.classList.add("hidden");
 	overlay.classList.add("hidden");
-	document.body.classList.remove("sticky-body");
+	// document.body.classList.remove("sticky-body"); //switching this off, cause some visual disorientation with very long lists
 };
 
 document.addEventListener("click", closeModal);
