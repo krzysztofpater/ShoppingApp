@@ -5,6 +5,9 @@ const send = document.querySelector(".btn__send");
 const mainInput = document.querySelector(".add__input");
 const mainList = document.querySelector(".list");
 
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+
 //create a place in localstorage where list of shopping products will be hold
 let list = JSON.parse(localStorage.getItem("list")) || [];
 
@@ -111,5 +114,18 @@ send.addEventListener("click", () => {
 		})
 		.catch((error) => {
 			console.error("Error:", error);
-		});
+		})
+		//info window
+		.then(openModal);
 });
+
+const openModal = () => {
+	modal.classList.remove("hidden");
+	overlay.classList.remove("hidden");
+};
+const closeModal = () => {
+	modal.classList.add("hidden");
+	overlay.classList.add("hidden");
+};
+
+document.addEventListener("click", closeModal);
