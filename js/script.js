@@ -5,6 +5,7 @@ const send = document.querySelector(".btn__send");
 const mainInput = document.querySelector(".add__input");
 const mainList = document.querySelector(".list");
 
+//create a place in localstorage where list of shopping products will be hold
 let list = JSON.parse(localStorage.getItem("list")) || [];
 
 if (localStorage.getItem("list")) {
@@ -22,10 +23,12 @@ plus.addEventListener("click", (e) => {
 		return;
 	}
 
+	//create an object with a single product. Iniqueness of ID id provided through the time stamp
 	const task = {
 		id: new Date().getTime(),
 		name: inputValue,
 	};
+	//adding a product to the array in localstorage
 	list.push(task);
 	localStorage.setItem("list", JSON.stringify(list));
 
@@ -70,3 +73,31 @@ function removeTask(taskId) {
 
 	localStorage.setItem("list", JSON.stringify(list));
 }
+
+//sending list array using POST method
+send.addEventListener("click", () => {
+	fetch(`/grocery/<day>`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			items: list,
+		}),
+	})
+		.then((response) => {
+			if (response.ok) {
+				return response.json();
+			} else {
+				throw new Error(
+					`Server responded with status code: ${response.status}`
+				);
+			}
+		})
+		.then((data) => {
+			console.log("Success:", data);
+		})
+		.catch((error) => {
+			console.error("Error:", error);
+		});
+});
